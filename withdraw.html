@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Withdraw Coins</title>
+  <style>
+    body {
+      background: #0f172a; color: #fff; font-family: Arial; text-align: center;
+    }
+    .form-box {
+      background: #1e293b; padding: 20px; margin: 30px auto; width: 90%; max-width: 400px; border-radius: 10px;
+    }
+    input {
+      padding: 10px; width: 80%; margin: 10px auto; display: block; border-radius: 5px; border: none;
+    }
+    button {
+      padding: 10px 20px; margin-top: 10px; border: none; border-radius: 5px; background: #38bdf8; color: #000;
+    }
+    #response {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>🧾 Withdraw Coins</h2>
+    <p>Minimum Withdrawal: ₹200 (400 Coins)</p>
+    <form onsubmit="return submitWithdraw();">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="text" id="upi" placeholder="Your UPI ID" required />
+      <input type="number" id="amount" placeholder="Amount in ₹ (Min ₹200)" required />
+      <button type="submit">Submit Request</button>
+    </form>
+    <p id="response"></p>
+  </div>
+
+  <script>
+    function submitWithdraw() {
+      const amt = parseInt(document.getElementById('amount').value);
+      if (amt < 200) {
+        alert("❌ Minimum withdrawal is ₹200");
+        return false;
+      }
+      document.getElementById('response').innerText = "✅ Withdrawal Request Submitted. Admin will review and process shortly.";
+      return false;
+    }
+  </script>
+</body>
+</html>

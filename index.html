@@ -10,22 +10,25 @@
   <div class="container">
     <h1>🎯 Color Prediction Game</h1>
     <div class="balance">💰 Balance: ₹<span id="balance">1000</span></div>
-    
-    <div class="countdown">⏱ Result in: <span id="timer">60</span>s</div>
-    
+    <div class="countdown">⏱ Result in: <span id="timer">30</span>s</div>
+
+    <div class="betting">
+      <label for="betAmount">Enter Bet Amount (coins):</label><br>
+      <input type="number" id="betAmount" placeholder="Min 10, Max 100000" />
+    </div>
+
     <div class="buttons">
       <button onclick="placeBet('green')">🟢 Green (2x)</button>
       <button onclick="placeBet('red')">🔴 Red (2x)</button>
       <button onclick="placeBet('violet')">🟣 Violet (4.5x)</button>
     </div>
-    
+
     <div class="result" id="result">Result: —</div>
     <div class="history">
       <h3>Previous Results:</h3>
       <ul id="history-list"></ul>
     </div>
   </div>
-
   <script src="js/main.js"></script>
 </body>
 </html>
